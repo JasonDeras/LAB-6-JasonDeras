@@ -1,17 +1,17 @@
 
 import java.util.*;
 
-
 public class Series {
- private String nombre;
- private int duracion;
- private String categoria;
- private ArrayList actores=new ArrayList();
- private int temporadoas;
- private String productora;
- private String idioma;
- private String doblaje;
- private String subtitulos;
+
+    private String nombre;
+    private int duracion;
+    private String categoria;
+    private ArrayList actores = new ArrayList();
+    private int temporadoas;
+    private String productora;
+    private String idioma;
+    private String doblaje;
+    private String subtitulos;
 
     public Series(String nombre, int duracion, String categoria, int temporadoas, String productora, String idioma, String doblaje, String subtitulos) {
         this.nombre = nombre;
@@ -98,7 +98,7 @@ public class Series {
 
     @Override
     public String toString() {
-        return "Series{" + "nombre=" + nombre + ", duracion=" + duracion + ", categoria=" + categoria + ", actores=" + actores + ", temporadoas=" + temporadoas + ", productora=" + productora + ", idioma=" + idioma + ", doblaje=" + doblaje + ", subtitulos=" + subtitulos + '}';
+        return "nombre=" + nombre + "\n duracion=" + duracion + "\n categoria=" + categoria + "\n actores=" + actores + "\n temporadoas=" + temporadoas + "\n productora=" + productora + "\n idioma=" + idioma + "\n doblaje=" + doblaje + "\n subtitulos=" + subtitulos + '}';
     }
- 
+
 }
