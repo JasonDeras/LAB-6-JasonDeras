@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author jason
- */
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Principal extends javax.swing.JFrame {
 
     /**
@@ -26,7 +24,147 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jd_Login = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        pf_Clave_Usuario = new javax.swing.JPasswordField();
+        tf_Usuario = new javax.swing.JTextField();
+        bt_Login = new javax.swing.JButton();
+        jmb_Opciones = new javax.swing.JMenuBar();
+        jm_Accerder = new javax.swing.JMenu();
+        jmi_Login = new javax.swing.JMenuItem();
+        jmi_Logout = new javax.swing.JMenuItem();
+        jm_Series = new javax.swing.JMenu();
+        jmi_Crear_Serie = new javax.swing.JMenuItem();
+        jmi_Modificar_Serie = new javax.swing.JMenuItem();
+        jmi_Eliminar_Serie = new javax.swing.JMenuItem();
+        jmi_Listar_Series = new javax.swing.JMenuItem();
+        jm_Peliculas = new javax.swing.JMenu();
+        jmi_Crear_Pelicula = new javax.swing.JMenuItem();
+        jmi_Modificar_Pelicula = new javax.swing.JMenuItem();
+        jmi_Eliminar_Pelicula = new javax.swing.JMenuItem();
+        jmi_Listar_Peliculas = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jLabel1.setText("Usuario");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("Login de Usuario");
+
+        jLabel3.setText("Contraseña");
+
+        bt_Login.setText("Login");
+        bt_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_LoginActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_LoginLayout = new javax.swing.GroupLayout(jd_Login.getContentPane());
+        jd_Login.getContentPane().setLayout(jd_LoginLayout);
+        jd_LoginLayout.setHorizontalGroup(
+            jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_LoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2)
+                        .addGroup(jd_LoginLayout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tf_Usuario))
+                        .addGroup(jd_LoginLayout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(18, 18, 18)
+                            .addComponent(pf_Clave_Usuario)))
+                    .addComponent(bt_Login))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        jd_LoginLayout.setVerticalGroup(
+            jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_LoginLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel2)
+                .addGap(37, 37, 37)
+                .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(tf_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jd_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(pf_Clave_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(bt_Login)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jm_Accerder.setText("Acceder");
+
+        jmi_Login.setText("Login");
+        jmi_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_LoginActionPerformed(evt);
+            }
+        });
+        jm_Accerder.add(jmi_Login);
+
+        jmi_Logout.setText("Login out");
+        jm_Accerder.add(jmi_Logout);
+
+        jmb_Opciones.add(jm_Accerder);
+
+        jm_Series.setText("Series");
+        jm_Series.setEnabled(false);
+
+        jmi_Crear_Serie.setText("Crear Serie");
+        jmi_Crear_Serie.setEnabled(false);
+        jm_Series.add(jmi_Crear_Serie);
+
+        jmi_Modificar_Serie.setText("Modificar Serie");
+        jmi_Modificar_Serie.setEnabled(false);
+        jmi_Modificar_Serie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_Modificar_SerieActionPerformed(evt);
+            }
+        });
+        jm_Series.add(jmi_Modificar_Serie);
+
+        jmi_Eliminar_Serie.setText("Eliminar Serie");
+        jmi_Eliminar_Serie.setEnabled(false);
+        jm_Series.add(jmi_Eliminar_Serie);
+
+        jmi_Listar_Series.setText("Listar Serie");
+        jmi_Listar_Series.setEnabled(false);
+        jm_Series.add(jmi_Listar_Series);
+
+        jmb_Opciones.add(jm_Series);
+
+        jm_Peliculas.setText("Peliculas");
+        jm_Peliculas.setEnabled(false);
+
+        jmi_Crear_Pelicula.setText("Crear Pelicula");
+        jmi_Crear_Pelicula.setEnabled(false);
+        jm_Peliculas.add(jmi_Crear_Pelicula);
+
+        jmi_Modificar_Pelicula.setText("Modificar Pelicula");
+        jmi_Modificar_Pelicula.setEnabled(false);
+        jm_Peliculas.add(jmi_Modificar_Pelicula);
+
+        jmi_Eliminar_Pelicula.setText("Eliminar Pelicula");
+        jmi_Eliminar_Pelicula.setEnabled(false);
+        jm_Peliculas.add(jmi_Eliminar_Pelicula);
+
+        jmi_Listar_Peliculas.setText("Listar Peliculas");
+        jm_Peliculas.add(jmi_Listar_Peliculas);
+
+        jmb_Opciones.add(jm_Peliculas);
+
+        setJMenuBar(jmb_Opciones);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -36,11 +174,71 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmi_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_LoginActionPerformed
+        // TODO add your handling code here:
+        jd_Login.setModal(true);
+        jd_Login.pack();
+        jd_Login.setLocationRelativeTo(this);
+        jd_Login.setVisible(true);
+    }//GEN-LAST:event_jmi_LoginActionPerformed
+
+    private void bt_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_LoginActionPerformed
+        // TODO add your handling code here:
+        int cont = 0;
+        String aux2 = "";
+        File archivo;
+        FileReader rf = null;
+        BufferedReader br = null;
+        try {
+            archivo = new File("./registrados.txt");
+            rf = new FileReader(archivo);
+            br = new BufferedReader(rf);
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                for (int i = 0; i < linea.length(); i++) {
+                    if (linea.charAt(i) == ';') {
+                        cont++;
+                        aux2 += linea;
+                    }
+                }
+                if (cont == 3) {
+                    String[] aux = aux2.split(";");
+                    if (aux[0].equals(tf_Usuario.getText()) && aux[3].equals(pf_Clave_Usuario.getText())) {
+                        jmi_Login.setEnabled(false);
+                        jm_Series.setEnabled(true);
+                        jmi_Crear_Serie.setEnabled(true);
+                        jmi_Eliminar_Serie.setEnabled(true);
+                        jmi_Modificar_Serie.setEnabled(true);
+                        jmi_Listar_Series.setEnabled(true);
+                        jm_Peliculas.setEnabled(true);
+                        jmi_Listar_Peliculas.setEnabled(true);
+                        jmi_Crear_Pelicula.setEnabled(true);
+                        jmi_Eliminar_Pelicula.setEnabled(true);
+                        jmi_Modificar_Pelicula.setEnabled(true);
+                        jmi_Logout.setEnabled(true);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            br.close();
+            rf.close();
+        } catch (IOException e) {
+        }
+
+    }//GEN-LAST:event_bt_LoginActionPerformed
+
+    private void jmi_Modificar_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Modificar_SerieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_Modificar_SerieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +276,27 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_Login;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JDialog jd_Login;
+    private javax.swing.JMenu jm_Accerder;
+    private javax.swing.JMenu jm_Peliculas;
+    private javax.swing.JMenu jm_Series;
+    private javax.swing.JMenuBar jmb_Opciones;
+    private javax.swing.JMenuItem jmi_Crear_Pelicula;
+    private javax.swing.JMenuItem jmi_Crear_Serie;
+    private javax.swing.JMenuItem jmi_Eliminar_Pelicula;
+    private javax.swing.JMenuItem jmi_Eliminar_Serie;
+    private javax.swing.JMenuItem jmi_Listar_Peliculas;
+    private javax.swing.JMenuItem jmi_Listar_Series;
+    private javax.swing.JMenuItem jmi_Login;
+    private javax.swing.JMenuItem jmi_Logout;
+    private javax.swing.JMenuItem jmi_Modificar_Pelicula;
+    private javax.swing.JMenuItem jmi_Modificar_Serie;
+    private javax.swing.JPasswordField pf_Clave_Usuario;
+    private javax.swing.JTextField tf_Usuario;
     // End of variables declaration//GEN-END:variables
 }
