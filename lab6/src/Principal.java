@@ -92,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
         rb_Subtitulos_Si1 = new javax.swing.JRadioButton();
         rb_Subtitulos_No1 = new javax.swing.JRadioButton();
         bt_Crear_Guardar1 = new javax.swing.JButton();
-        bt_Crear_Serie1 = new javax.swing.JButton();
+        bt_Crear_Pelicula = new javax.swing.JButton();
         rb_Animacion = new javax.swing.JRadioButton();
         rb_Fantacsia = new javax.swing.JRadioButton();
         jmb_Opciones = new javax.swing.JMenuBar();
@@ -434,10 +434,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        bt_Crear_Serie1.setText("Crear");
-        bt_Crear_Serie1.addActionListener(new java.awt.event.ActionListener() {
+        bt_Crear_Pelicula.setText("Crear");
+        bt_Crear_Pelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_Crear_Serie1ActionPerformed(evt);
+                bt_Crear_PeliculaActionPerformed(evt);
             }
         });
 
@@ -515,7 +515,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rb_Subtitulos_No1)
-                                    .addComponent(bt_Crear_Serie1))))
+                                    .addComponent(bt_Crear_Pelicula))))
                         .addGap(21, 21, 21)
                         .addComponent(rb_Ingles1)
                         .addGap(18, 18, 18)
@@ -578,7 +578,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_Crear_Guardar1)
-                    .addComponent(bt_Crear_Serie1))
+                    .addComponent(bt_Crear_Pelicula))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -619,6 +619,11 @@ public class Principal extends javax.swing.JFrame {
 
         jmi_Crear_Pelicula.setText("Crear Pelicula");
         jmi_Crear_Pelicula.setEnabled(false);
+        jmi_Crear_Pelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_Crear_PeliculaActionPerformed(evt);
+            }
+        });
         jm_Peliculas.add(jmi_Crear_Pelicula);
 
         jmb_Opciones.add(jm_Peliculas);
@@ -891,98 +896,6 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Crear_Guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_Guardar1ActionPerformed
         // TODO add your handling code here:
-        String nombre;
-        int duracion;
-        String categoria;
-        ArrayList actores = new ArrayList();
-        String director;
-        String productora;
-        String idioma;
-        String subtitulos;
-        String doblaje;
-
-        //If de los idiomas
-        if (rb_Aleman1.isSelected()) {
-            idioma = "Aleman";
-        } else if (rb_Español1.isSelected()) {
-            idioma = "Español";
-        } else if (rb_Ingles1.isSelected()) {
-            idioma = "Ingles";
-        } else if (rb_Frances1.isSelected()) {
-            idioma = "Frances";
-        } else {
-            idioma = "";
-        }//Fin del if del idioma de la Pelicula
-
-        //If de la categoria de la Pelicula
-        if (rb_Animacion.isSelected()) {
-            categoria = "Animacion";
-        } else if (rb_Fantacsia.isSelected()) {
-            categoria = "Fantasia";
-        } else if (rb_Suspenso1.isSelected()) {
-            categoria = "Suspenso";
-        } else if (rb_Terror.isSelected()) {
-            categoria = "Terror";
-        } else if (rb_Accion.isSelected()) {
-            categoria = "Accion";
-        } else if (rb_Romanticas.isSelected()) {
-            categoria = "Romanticas";
-        } else if (rb_Ciencia_Ficcion.isSelected()) {
-            categoria = "Ciencia Ficcion";
-        } else {
-            categoria = "";
-        }//Fin del if de la categoria de las peliculas
-
-        //If del doblaje
-        if (rb_Doblaje_No.isSelected()) {
-            doblaje = "No";
-        } else if (rb_Doblaje_Si.isSelected()) {
-            doblaje = "Si";
-        } else {
-            doblaje = "";
-        }//Fin del if del doblaje de la serie
-
-        //If de los subtitulos de la serie
-        if (rb_Subtitulos_Si.isSelected()) {
-            subtitulos = "Si";
-        } else if (rb_Subtitulos_No.isSelected()) {
-            subtitulos = "No";
-        } else {
-            subtitulos = "";
-        }//Fin del if de los subtitulos
-
-        //Llenado el resto de los datos
-        nombre = tf_Nombre_Pelicula.getText();
-        duracion = Integer.parseInt(tf_Duracion_Pelicula.getText());
-        actores.add(ta_Arctores_Peliculas.getText());
-        director = tf_Director.getText();
-        productora = tf_Productora_Pelicula.getText();
-        p = new Peliculas(nombre, duracion, categoria, director, productora, idioma, subtitulos, doblaje);
-        p.getActores().add(actores);
-
-        //Reseteando los valores de los textos
-        tf_Duracion_Pelicula.setText("");
-        tf_Nombre_Pelicula.setText("");
-        tf_Productora_Pelicula.setText("");
-        tf_Director.setText("");
-        ta_Arctores_Peliculas.setText("");
-        rb_Aleman1.setSelected(false);
-        rb_Doblaje_No1.setSelected(false);
-        rb_Doblaje_Si1.setSelected(false);
-        rb_Accion.setSelected(false);
-        rb_Español1.setSelected(false);
-        rb_Frances1.setSelected(false);
-        rb_Ingles1.setSelected(false);
-        rb_Romanticas.setSelected(false);
-        rb_Terror.setSelected(false);
-        rb_Subtitulos_No1.setSelected(false);
-        rb_Subtitulos_Si1.setSelected(false);
-        rb_Suspenso1.setSelected(false);
-        rb_Ciencia_Ficcion.setSelected(false);
-    }//GEN-LAST:event_bt_Crear_Guardar1ActionPerformed
-
-    private void bt_Crear_Serie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_Serie1ActionPerformed
-        // TODO add your handling code here:
         try {
             ADMP ap = new ADMP("LAB-6-JasonDeras\\lab6\\Nesflis\\Peliculas");
             ap.cargarArchivo();
@@ -1078,7 +991,109 @@ public class Principal extends javax.swing.JFrame {
         rb_Subtitulos_Si1.setSelected(false);
         rb_Suspenso1.setSelected(false);
         rb_Ciencia_Ficcion.setSelected(false);
-    }//GEN-LAST:event_bt_Crear_Serie1ActionPerformed
+    }//GEN-LAST:event_bt_Crear_Guardar1ActionPerformed
+
+    private void bt_Crear_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_PeliculaActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        int duracion;
+        String categoria;
+        ArrayList actores = new ArrayList();
+        String director;
+        String productora;
+        String idioma;
+        String subtitulos;
+        String doblaje;
+
+        //If de los idiomas
+        if (rb_Aleman1.isSelected()) {
+            idioma = "Aleman";
+        } else if (rb_Español1.isSelected()) {
+            idioma = "Español";
+        } else if (rb_Ingles1.isSelected()) {
+            idioma = "Ingles";
+        } else if (rb_Frances1.isSelected()) {
+            idioma = "Frances";
+        } else {
+            idioma = "";
+        }//Fin del if del idioma de la Pelicula
+
+        //If de la categoria de la Pelicula
+        if (rb_Animacion.isSelected()) {
+            categoria = "Animacion";
+        } else if (rb_Fantacsia.isSelected()) {
+            categoria = "Fantasia";
+        } else if (rb_Suspenso1.isSelected()) {
+            categoria = "Suspenso";
+        } else if (rb_Terror.isSelected()) {
+            categoria = "Terror";
+        } else if (rb_Accion.isSelected()) {
+            categoria = "Accion";
+        } else if (rb_Romanticas.isSelected()) {
+            categoria = "Romanticas";
+        } else if (rb_Ciencia_Ficcion.isSelected()) {
+            categoria = "Ciencia Ficcion";
+        } else {
+            categoria = "";
+        }//Fin del if de la categoria de las peliculas
+
+        //If del doblaje
+        if (rb_Doblaje_No.isSelected()) {
+            doblaje = "No";
+        } else if (rb_Doblaje_Si.isSelected()) {
+            doblaje = "Si";
+        } else {
+            doblaje = "";
+        }//Fin del if del doblaje de la serie
+
+        //If de los subtitulos de la serie
+        if (rb_Subtitulos_Si.isSelected()) {
+            subtitulos = "Si";
+        } else if (rb_Subtitulos_No.isSelected()) {
+            subtitulos = "No";
+        } else {
+            subtitulos = "";
+        }//Fin del if de los subtitulos
+
+        //Llenado el resto de los datos
+        nombre = tf_Nombre_Pelicula.getText();
+        duracion = Integer.parseInt(tf_Duracion_Pelicula.getText());
+        actores.add(ta_Arctores_Peliculas.getText());
+        director = tf_Director.getText();
+        productora = tf_Productora_Pelicula.getText();
+        p = new Peliculas(nombre, duracion, categoria, director, productora, idioma, subtitulos, doblaje);
+        p.getActores().add(actores);
+
+        //Reseteando los valores de los textos
+        tf_Duracion_Pelicula.setText("");
+        tf_Nombre_Pelicula.setText("");
+        tf_Productora_Pelicula.setText("");
+        tf_Director.setText("");
+        ta_Arctores_Peliculas.setText("");
+        rb_Aleman1.setSelected(false);
+        rb_Doblaje_No1.setSelected(false);
+        rb_Doblaje_Si1.setSelected(false);
+        rb_Accion.setSelected(false);
+        rb_Español1.setSelected(false);
+        rb_Frances1.setSelected(false);
+        rb_Ingles1.setSelected(false);
+        rb_Romanticas.setSelected(false);
+        rb_Terror.setSelected(false);
+        rb_Subtitulos_No1.setSelected(false);
+        rb_Subtitulos_Si1.setSelected(false);
+        rb_Suspenso1.setSelected(false);
+        rb_Ciencia_Ficcion.setSelected(false);
+    }//GEN-LAST:event_bt_Crear_PeliculaActionPerformed
+
+    private void jmi_Crear_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Crear_PeliculaActionPerformed
+        // TODO add your handling code here:
+        Date f = new Date();
+        jd_Crear_Pelicula.setModal(true);
+        jd_Crear_Pelicula.pack();
+        jd_Crear_Pelicula.setLocationRelativeTo(this);
+        jd_Crear_Pelicula.setVisible(true);
+        bitacora += "Crear Serie" + "" + f;
+    }//GEN-LAST:event_jmi_Crear_PeliculaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1146,8 +1161,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_Subtitulo_Serie;
     private javax.swing.JButton bt_Crear_Guardar;
     private javax.swing.JButton bt_Crear_Guardar1;
+    private javax.swing.JButton bt_Crear_Pelicula;
     private javax.swing.JButton bt_Crear_Serie;
-    private javax.swing.JButton bt_Crear_Serie1;
     private javax.swing.JButton bt_Login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
