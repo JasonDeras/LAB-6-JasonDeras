@@ -1,7 +1,7 @@
 
 import java.io.*;
 import java.util.*;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -61,20 +61,49 @@ public class Principal extends javax.swing.JFrame {
         bg_Categoria_Serie = new javax.swing.ButtonGroup();
         bg_Subtitulo_Serie = new javax.swing.ButtonGroup();
         bg_Doblaje_Serie = new javax.swing.ButtonGroup();
+        jd_Crear_Pelicula = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        tf_Nombre_Pelicula = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        tf_Duracion_Pelicula = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        rb_Terror = new javax.swing.JRadioButton();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_Arctores_Peliculas = new javax.swing.JTextArea();
+        rb_Accion = new javax.swing.JRadioButton();
+        rb_Romanticas = new javax.swing.JRadioButton();
+        rb_Suspenso1 = new javax.swing.JRadioButton();
+        rb_Ciencia_Ficcion = new javax.swing.JRadioButton();
+        jLabel19 = new javax.swing.JLabel();
+        tf_Director = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tf_Productora_Pelicula = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        rb_Español1 = new javax.swing.JRadioButton();
+        rb_Ingles1 = new javax.swing.JRadioButton();
+        rb_Aleman1 = new javax.swing.JRadioButton();
+        rb_Frances1 = new javax.swing.JRadioButton();
+        jLabel22 = new javax.swing.JLabel();
+        rb_Doblaje_Si1 = new javax.swing.JRadioButton();
+        rb_Doblaje_No1 = new javax.swing.JRadioButton();
+        jLabel23 = new javax.swing.JLabel();
+        rb_Subtitulos_Si1 = new javax.swing.JRadioButton();
+        rb_Subtitulos_No1 = new javax.swing.JRadioButton();
+        bt_Crear_Guardar1 = new javax.swing.JButton();
+        bt_Crear_Serie1 = new javax.swing.JButton();
+        rb_Animacion = new javax.swing.JRadioButton();
+        rb_Fantacsia = new javax.swing.JRadioButton();
         jmb_Opciones = new javax.swing.JMenuBar();
         jm_Accerder = new javax.swing.JMenu();
         jmi_Login = new javax.swing.JMenuItem();
         jmi_Logout = new javax.swing.JMenuItem();
         jm_Series = new javax.swing.JMenu();
         jmi_Crear_Serie = new javax.swing.JMenuItem();
-        jmi_Modificar_Serie = new javax.swing.JMenuItem();
-        jmi_Eliminar_Serie = new javax.swing.JMenuItem();
-        jmi_Listar_Series = new javax.swing.JMenuItem();
         jm_Peliculas = new javax.swing.JMenu();
         jmi_Crear_Pelicula = new javax.swing.JMenuItem();
-        jmi_Modificar_Pelicula = new javax.swing.JMenuItem();
-        jmi_Eliminar_Pelicula = new javax.swing.JMenuItem();
-        jmi_Listar_Peliculas = new javax.swing.JMenuItem();
+        jm_Listar = new javax.swing.JMenu();
 
         jLabel1.setText("Usuario");
 
@@ -334,6 +363,225 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel14.setText("Creacion de Peliculas");
+
+        jLabel15.setText("Nombre");
+
+        jLabel16.setText("Tiempo de Duracion");
+
+        jLabel17.setText("Categoria");
+
+        bg_Categoria_Serie.add(rb_Terror);
+        rb_Terror.setText("Terror");
+
+        jLabel18.setText("Actores Principales");
+
+        ta_Arctores_Peliculas.setColumns(20);
+        ta_Arctores_Peliculas.setRows(5);
+        jScrollPane2.setViewportView(ta_Arctores_Peliculas);
+
+        bg_Categoria_Serie.add(rb_Accion);
+        rb_Accion.setText("Accion");
+
+        bg_Categoria_Serie.add(rb_Romanticas);
+        rb_Romanticas.setText("Romanticas");
+
+        bg_Categoria_Serie.add(rb_Suspenso1);
+        rb_Suspenso1.setText("Suspenso");
+
+        bg_Categoria_Serie.add(rb_Ciencia_Ficcion);
+        rb_Ciencia_Ficcion.setText("Ciencia Ficcion");
+
+        jLabel19.setText("Director");
+
+        jLabel20.setText("Productora");
+
+        jLabel21.setText("Idioma Original");
+
+        bg_Idioma_Serie.add(rb_Español1);
+        rb_Español1.setText("Español");
+
+        bg_Idioma_Serie.add(rb_Ingles1);
+        rb_Ingles1.setText("Ingles");
+
+        bg_Idioma_Serie.add(rb_Aleman1);
+        rb_Aleman1.setText("Alemán");
+
+        bg_Idioma_Serie.add(rb_Frances1);
+        rb_Frances1.setText("Francés");
+
+        jLabel22.setText("Doblaje");
+
+        bg_Doblaje_Serie.add(rb_Doblaje_Si1);
+        rb_Doblaje_Si1.setText("Si");
+
+        bg_Doblaje_Serie.add(rb_Doblaje_No1);
+        rb_Doblaje_No1.setText("No");
+
+        jLabel23.setText("Subtitulos");
+
+        bg_Subtitulo_Serie.add(rb_Subtitulos_Si1);
+        rb_Subtitulos_Si1.setText("Si");
+
+        bg_Subtitulo_Serie.add(rb_Subtitulos_No1);
+        rb_Subtitulos_No1.setText("No");
+
+        bt_Crear_Guardar1.setText("Guardar");
+        bt_Crear_Guardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_Guardar1ActionPerformed(evt);
+            }
+        });
+
+        bt_Crear_Serie1.setText("Crear");
+        bt_Crear_Serie1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_Serie1ActionPerformed(evt);
+            }
+        });
+
+        bg_Categoria_Serie.add(rb_Animacion);
+        rb_Animacion.setText("Animacion");
+
+        bg_Categoria_Serie.add(rb_Fantacsia);
+        rb_Fantacsia.setText("Fantasia");
+
+        javax.swing.GroupLayout jd_Crear_PeliculaLayout = new javax.swing.GroupLayout(jd_Crear_Pelicula.getContentPane());
+        jd_Crear_Pelicula.getContentPane().setLayout(jd_Crear_PeliculaLayout);
+        jd_Crear_PeliculaLayout.setHorizontalGroup(
+            jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel14)
+                        .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                            .addComponent(jLabel15)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tf_Nombre_Pelicula))
+                        .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                            .addComponent(jLabel16)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(tf_Duracion_Pelicula)))
+                    .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Terror)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Accion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Romanticas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_Suspenso1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_Ciencia_Ficcion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Animacion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_Fantacsia))
+                    .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_PeliculaLayout.createSequentialGroup()
+                            .addComponent(jLabel20)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tf_Productora_Pelicula))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_PeliculaLayout.createSequentialGroup()
+                            .addComponent(jLabel19)
+                            .addGap(18, 18, 18)
+                            .addComponent(tf_Director, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                        .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_PeliculaLayout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Español1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_PeliculaLayout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Doblaje_Si1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rb_Doblaje_No1))
+                            .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bt_Crear_Guardar1)
+                                    .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                                        .addComponent(jLabel23)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rb_Subtitulos_Si1)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rb_Subtitulos_No1)
+                                    .addComponent(bt_Crear_Serie1))))
+                        .addGap(21, 21, 21)
+                        .addComponent(rb_Ingles1)
+                        .addGap(18, 18, 18)
+                        .addComponent(rb_Aleman1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Frances1)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        jd_Crear_PeliculaLayout.setVerticalGroup(
+            jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Crear_PeliculaLayout.createSequentialGroup()
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_Nombre_Pelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_Duracion_Pelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(rb_Terror)
+                    .addComponent(rb_Accion)
+                    .addComponent(rb_Romanticas)
+                    .addComponent(rb_Suspenso1)
+                    .addComponent(rb_Ciencia_Ficcion)
+                    .addComponent(rb_Animacion)
+                    .addComponent(rb_Fantacsia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_Director, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_Productora_Pelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(rb_Ingles1)
+                    .addComponent(rb_Aleman1)
+                    .addComponent(rb_Frances1)
+                    .addComponent(rb_Español1))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(rb_Doblaje_Si1)
+                    .addComponent(rb_Doblaje_No1))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(rb_Subtitulos_Si1)
+                    .addComponent(rb_Subtitulos_No1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Crear_Guardar1)
+                    .addComponent(bt_Crear_Serie1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jm_Accerder.setText("Acceder");
@@ -347,6 +595,7 @@ public class Principal extends javax.swing.JFrame {
         jm_Accerder.add(jmi_Login);
 
         jmi_Logout.setText("Login out");
+        jmi_Logout.setEnabled(false);
         jm_Accerder.add(jmi_Logout);
 
         jmb_Opciones.add(jm_Accerder);
@@ -356,24 +605,12 @@ public class Principal extends javax.swing.JFrame {
 
         jmi_Crear_Serie.setText("Crear Serie");
         jmi_Crear_Serie.setEnabled(false);
-        jm_Series.add(jmi_Crear_Serie);
-
-        jmi_Modificar_Serie.setText("Modificar Serie");
-        jmi_Modificar_Serie.setEnabled(false);
-        jmi_Modificar_Serie.addActionListener(new java.awt.event.ActionListener() {
+        jmi_Crear_Serie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_Modificar_SerieActionPerformed(evt);
+                jmi_Crear_SerieActionPerformed(evt);
             }
         });
-        jm_Series.add(jmi_Modificar_Serie);
-
-        jmi_Eliminar_Serie.setText("Eliminar Serie");
-        jmi_Eliminar_Serie.setEnabled(false);
-        jm_Series.add(jmi_Eliminar_Serie);
-
-        jmi_Listar_Series.setText("Listar Serie");
-        jmi_Listar_Series.setEnabled(false);
-        jm_Series.add(jmi_Listar_Series);
+        jm_Series.add(jmi_Crear_Serie);
 
         jmb_Opciones.add(jm_Series);
 
@@ -384,19 +621,11 @@ public class Principal extends javax.swing.JFrame {
         jmi_Crear_Pelicula.setEnabled(false);
         jm_Peliculas.add(jmi_Crear_Pelicula);
 
-        jmi_Modificar_Pelicula.setText("Modificar Pelicula");
-        jmi_Modificar_Pelicula.setEnabled(false);
-        jm_Peliculas.add(jmi_Modificar_Pelicula);
-
-        jmi_Eliminar_Pelicula.setText("Eliminar Pelicula");
-        jmi_Eliminar_Pelicula.setEnabled(false);
-        jm_Peliculas.add(jmi_Eliminar_Pelicula);
-
-        jmi_Listar_Peliculas.setText("Listar Peliculas");
-        jmi_Listar_Peliculas.setEnabled(false);
-        jm_Peliculas.add(jmi_Listar_Peliculas);
-
         jmb_Opciones.add(jm_Peliculas);
+
+        jm_Listar.setText("Listar");
+        jm_Listar.setEnabled(false);
+        jmb_Opciones.add(jm_Listar);
 
         setJMenuBar(jmb_Opciones);
 
@@ -448,14 +677,9 @@ public class Principal extends javax.swing.JFrame {
                         jmi_Login.setEnabled(false);
                         jm_Series.setEnabled(true);
                         jmi_Crear_Serie.setEnabled(true);
-                        jmi_Eliminar_Serie.setEnabled(true);
-                        jmi_Modificar_Serie.setEnabled(true);
-                        jmi_Listar_Series.setEnabled(true);
                         jm_Peliculas.setEnabled(true);
-                        jmi_Listar_Peliculas.setEnabled(true);
                         jmi_Crear_Pelicula.setEnabled(true);
-                        jmi_Eliminar_Pelicula.setEnabled(true);
-                        jmi_Modificar_Pelicula.setEnabled(true);
+                        jm_Listar.setEnabled(true);
                         jmi_Logout.setEnabled(true);
                     }
                 }
@@ -470,10 +694,6 @@ public class Principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_bt_LoginActionPerformed
-
-    private void jmi_Modificar_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Modificar_SerieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_Modificar_SerieActionPerformed
 
     private void bt_Crear_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_GuardarActionPerformed
         // TODO add your handling code here:
@@ -543,6 +763,7 @@ public class Principal extends javax.swing.JFrame {
             temporadoas = Integer.parseInt(tf_Temporada.getText());
             productora = tf_Productora_Serie.getText();
             s = new Series(nombre, duracion, categoria, temporadoas, productora, idioma, doblaje, subtitulos);
+            s.getActores().add(actores);
             ap.getListap().add(s);
             ap.escribirArchivo();
         } catch (IOException e) {
@@ -636,7 +857,7 @@ public class Principal extends javax.swing.JFrame {
         productora = tf_Productora_Serie.getText();
         s = new Series(nombre, duracion, categoria, temporadoas, productora, idioma, doblaje, subtitulos);
         series.add(s);
-        
+
         //Reseteando los valores de los textos
         tf_Duracion_Serie.setText("");
         tf_Nombre_Serie.setText("");
@@ -658,9 +879,207 @@ public class Principal extends javax.swing.JFrame {
         rb_YYY.setSelected(false);
     }//GEN-LAST:event_bt_Crear_SerieActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jmi_Crear_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Crear_SerieActionPerformed
+        // TODO add your handling code here:
+        Date f = new Date();
+        jd_Crear_Serie.setModal(true);
+        jd_Crear_Serie.pack();
+        jd_Crear_Serie.setLocationRelativeTo(this);
+        jd_Crear_Serie.setVisible(true);
+        bitacora += "Crear Serie" + "" + f;
+    }//GEN-LAST:event_jmi_Crear_SerieActionPerformed
+
+    private void bt_Crear_Guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_Guardar1ActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        int duracion;
+        String categoria;
+        ArrayList actores = new ArrayList();
+        String director;
+        String productora;
+        String idioma;
+        String subtitulos;
+        String doblaje;
+
+        //If de los idiomas
+        if (rb_Aleman1.isSelected()) {
+            idioma = "Aleman";
+        } else if (rb_Español1.isSelected()) {
+            idioma = "Español";
+        } else if (rb_Ingles1.isSelected()) {
+            idioma = "Ingles";
+        } else if (rb_Frances1.isSelected()) {
+            idioma = "Frances";
+        } else {
+            idioma = "";
+        }//Fin del if del idioma de la Pelicula
+
+        //If de la categoria de la Pelicula
+        if (rb_Animacion.isSelected()) {
+            categoria = "Animacion";
+        } else if (rb_Fantacsia.isSelected()) {
+            categoria = "Fantasia";
+        } else if (rb_Suspenso1.isSelected()) {
+            categoria = "Suspenso";
+        } else if (rb_Terror.isSelected()) {
+            categoria = "Terror";
+        } else if (rb_Accion.isSelected()) {
+            categoria = "Accion";
+        } else if (rb_Romanticas.isSelected()) {
+            categoria = "Romanticas";
+        } else if (rb_Ciencia_Ficcion.isSelected()) {
+            categoria = "Ciencia Ficcion";
+        } else {
+            categoria = "";
+        }//Fin del if de la categoria de las peliculas
+
+        //If del doblaje
+        if (rb_Doblaje_No.isSelected()) {
+            doblaje = "No";
+        } else if (rb_Doblaje_Si.isSelected()) {
+            doblaje = "Si";
+        } else {
+            doblaje = "";
+        }//Fin del if del doblaje de la serie
+
+        //If de los subtitulos de la serie
+        if (rb_Subtitulos_Si.isSelected()) {
+            subtitulos = "Si";
+        } else if (rb_Subtitulos_No.isSelected()) {
+            subtitulos = "No";
+        } else {
+            subtitulos = "";
+        }//Fin del if de los subtitulos
+
+        //Llenado el resto de los datos
+        nombre = tf_Nombre_Pelicula.getText();
+        duracion = Integer.parseInt(tf_Duracion_Pelicula.getText());
+        actores.add(ta_Arctores_Peliculas.getText());
+        director = tf_Director.getText();
+        productora = tf_Productora_Pelicula.getText();
+        p = new Peliculas(nombre, duracion, categoria, director, productora, idioma, subtitulos, doblaje);
+        p.getActores().add(actores);
+
+        //Reseteando los valores de los textos
+        tf_Duracion_Pelicula.setText("");
+        tf_Nombre_Pelicula.setText("");
+        tf_Productora_Pelicula.setText("");
+        tf_Director.setText("");
+        ta_Arctores_Peliculas.setText("");
+        rb_Aleman1.setSelected(false);
+        rb_Doblaje_No1.setSelected(false);
+        rb_Doblaje_Si1.setSelected(false);
+        rb_Accion.setSelected(false);
+        rb_Español1.setSelected(false);
+        rb_Frances1.setSelected(false);
+        rb_Ingles1.setSelected(false);
+        rb_Romanticas.setSelected(false);
+        rb_Terror.setSelected(false);
+        rb_Subtitulos_No1.setSelected(false);
+        rb_Subtitulos_Si1.setSelected(false);
+        rb_Suspenso1.setSelected(false);
+        rb_Ciencia_Ficcion.setSelected(false);
+    }//GEN-LAST:event_bt_Crear_Guardar1ActionPerformed
+
+    private void bt_Crear_Serie1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_Serie1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            ADMP ap = new ADMP("LAB-6-JasonDeras\\lab6\\Nesflis\\Peliculas");
+            ap.cargarArchivo();
+            String nombre;
+            int duracion;
+            String categoria;
+            ArrayList actores = new ArrayList();
+            String director;
+            String productora;
+            String idioma;
+            String subtitulos;
+            String doblaje;
+
+            //If de los idiomas
+            if (rb_Aleman1.isSelected()) {
+                idioma = "Aleman";
+            } else if (rb_Español1.isSelected()) {
+                idioma = "Español";
+            } else if (rb_Ingles1.isSelected()) {
+                idioma = "Ingles";
+            } else if (rb_Frances1.isSelected()) {
+                idioma = "Frances";
+            } else {
+                idioma = "";
+            }//Fin del if del idioma de la Pelicula
+
+            //If de la categoria de la Pelicula
+            if (rb_Animacion.isSelected()) {
+                categoria = "Animacion";
+            } else if (rb_Fantacsia.isSelected()) {
+                categoria = "Fantasia";
+            } else if (rb_Suspenso1.isSelected()) {
+                categoria = "Suspenso";
+            } else if (rb_Terror.isSelected()) {
+                categoria = "Terror";
+            } else if (rb_Accion.isSelected()) {
+                categoria = "Accion";
+            } else if (rb_Romanticas.isSelected()) {
+                categoria = "Romanticas";
+            } else if (rb_Ciencia_Ficcion.isSelected()) {
+                categoria = "Ciencia Ficcion";
+            } else {
+                categoria = "";
+            }//Fin del if de la categoria de las peliculas
+
+            //If del doblaje
+            if (rb_Doblaje_No.isSelected()) {
+                doblaje = "No";
+            } else if (rb_Doblaje_Si.isSelected()) {
+                doblaje = "Si";
+            } else {
+                doblaje = "";
+            }//Fin del if del doblaje de la serie
+
+            //If de los subtitulos de la serie
+            if (rb_Subtitulos_Si.isSelected()) {
+                subtitulos = "Si";
+            } else if (rb_Subtitulos_No.isSelected()) {
+                subtitulos = "No";
+            } else {
+                subtitulos = "";
+            }//Fin del if de los subtitulos
+
+            //Llenado el resto de los datos
+            nombre = tf_Nombre_Pelicula.getText();
+            duracion = Integer.parseInt(tf_Duracion_Pelicula.getText());
+            actores.add(ta_Arctores_Peliculas.getText());
+            director = tf_Director.getText();
+            productora = tf_Productora_Pelicula.getText();
+            p = new Peliculas(nombre, duracion, categoria, director, productora, idioma, subtitulos, doblaje);
+            p.getActores().add(actores);
+            ap.getListap().add(p);
+            ap.escribirArchivo();
+        } catch (IOException e) {
+        }
+
+        //Reseteando los valores de los textos
+        tf_Duracion_Pelicula.setText("");
+        tf_Nombre_Pelicula.setText("");
+        tf_Productora_Pelicula.setText("");
+        tf_Director.setText("");
+        ta_Arctores_Peliculas.setText("");
+        rb_Aleman1.setSelected(false);
+        rb_Doblaje_No1.setSelected(false);
+        rb_Doblaje_Si1.setSelected(false);
+        rb_Accion.setSelected(false);
+        rb_Español1.setSelected(false);
+        rb_Frances1.setSelected(false);
+        rb_Ingles1.setSelected(false);
+        rb_Romanticas.setSelected(false);
+        rb_Terror.setSelected(false);
+        rb_Subtitulos_No1.setSelected(false);
+        rb_Subtitulos_Si1.setSelected(false);
+        rb_Suspenso1.setSelected(false);
+        rb_Ciencia_Ficcion.setSelected(false);
+    }//GEN-LAST:event_bt_Crear_Serie1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -699,7 +1118,26 @@ public class Principal extends javax.swing.JFrame {
                 new Principal().setVisible(true);
             }
         });
+
     }
+
+    public void bitacora(String bitacora) throws IOException {
+        File archivo = null;
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            archivo = new File("./Bitacora.txt");
+            fw = new FileWriter(archivo, true);
+            bw = new BufferedWriter(fw);
+            bw.write(bitacora);
+            bw.newLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        bw.close();
+        fw.close();
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bg_Categoria_Serie;
@@ -707,14 +1145,26 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_Idioma_Serie;
     private javax.swing.ButtonGroup bg_Subtitulo_Serie;
     private javax.swing.JButton bt_Crear_Guardar;
+    private javax.swing.JButton bt_Crear_Guardar1;
     private javax.swing.JButton bt_Crear_Serie;
+    private javax.swing.JButton bt_Crear_Serie1;
     private javax.swing.JButton bt_Login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -723,39 +1173,56 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JDialog jd_Crear_Pelicula;
     private javax.swing.JDialog jd_Crear_Serie;
     private javax.swing.JDialog jd_Login;
     private javax.swing.JMenu jm_Accerder;
+    private javax.swing.JMenu jm_Listar;
     private javax.swing.JMenu jm_Peliculas;
     private javax.swing.JMenu jm_Series;
     private javax.swing.JMenuBar jmb_Opciones;
     private javax.swing.JMenuItem jmi_Crear_Pelicula;
     private javax.swing.JMenuItem jmi_Crear_Serie;
-    private javax.swing.JMenuItem jmi_Eliminar_Pelicula;
-    private javax.swing.JMenuItem jmi_Eliminar_Serie;
-    private javax.swing.JMenuItem jmi_Listar_Peliculas;
-    private javax.swing.JMenuItem jmi_Listar_Series;
     private javax.swing.JMenuItem jmi_Login;
     private javax.swing.JMenuItem jmi_Logout;
-    private javax.swing.JMenuItem jmi_Modificar_Pelicula;
-    private javax.swing.JMenuItem jmi_Modificar_Serie;
     private javax.swing.JPasswordField pf_Clave_Usuario;
+    private javax.swing.JRadioButton rb_Accion;
     private javax.swing.JRadioButton rb_Aleman;
+    private javax.swing.JRadioButton rb_Aleman1;
+    private javax.swing.JRadioButton rb_Animacion;
+    private javax.swing.JRadioButton rb_Ciencia_Ficcion;
     private javax.swing.JRadioButton rb_Doblaje_No;
+    private javax.swing.JRadioButton rb_Doblaje_No1;
     private javax.swing.JRadioButton rb_Doblaje_Si;
+    private javax.swing.JRadioButton rb_Doblaje_Si1;
     private javax.swing.JRadioButton rb_Drama;
     private javax.swing.JRadioButton rb_Español;
+    private javax.swing.JRadioButton rb_Español1;
+    private javax.swing.JRadioButton rb_Fantacsia;
     private javax.swing.JRadioButton rb_Frances;
+    private javax.swing.JRadioButton rb_Frances1;
     private javax.swing.JRadioButton rb_Ingles;
+    private javax.swing.JRadioButton rb_Ingles1;
     private javax.swing.JRadioButton rb_Novelas;
+    private javax.swing.JRadioButton rb_Romanticas;
     private javax.swing.JRadioButton rb_Sitcom;
     private javax.swing.JRadioButton rb_Subtitulos_No;
+    private javax.swing.JRadioButton rb_Subtitulos_No1;
     private javax.swing.JRadioButton rb_Subtitulos_Si;
+    private javax.swing.JRadioButton rb_Subtitulos_Si1;
     private javax.swing.JRadioButton rb_Suspenso;
+    private javax.swing.JRadioButton rb_Suspenso1;
+    private javax.swing.JRadioButton rb_Terror;
     private javax.swing.JRadioButton rb_YYY;
+    private javax.swing.JTextArea ta_Arctores_Peliculas;
     private javax.swing.JTextArea ta_Arctores_Series;
+    private javax.swing.JTextField tf_Director;
+    private javax.swing.JTextField tf_Duracion_Pelicula;
     private javax.swing.JTextField tf_Duracion_Serie;
+    private javax.swing.JTextField tf_Nombre_Pelicula;
     private javax.swing.JTextField tf_Nombre_Serie;
+    private javax.swing.JTextField tf_Productora_Pelicula;
     private javax.swing.JTextField tf_Productora_Serie;
     private javax.swing.JTextField tf_Temporada;
     private javax.swing.JTextField tf_Usuario;

@@ -70,7 +70,6 @@ public class AMDS {
                 s = new Scanner(archivo);
                 s.useDelimiter(";");
                 while (s.hasNext()) {
-
                     listap.add(new Series(s.next(), s.nextInt(), s.next(), s.nextInt(), s.next(), s.next(), s.next(), s.next()));
                 }
             } catch (Exception e) {

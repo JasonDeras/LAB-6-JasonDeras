@@ -70,7 +70,7 @@ public class ADMP {
                 s = new Scanner(archivo);
                 s.useDelimiter(";");
                 while (s.hasNext()) {
-                    listap.add(new Peliculas(s.next(), s.nextInt(), s.next(), s.next(), s.next(), s.next(), s.next()));
+                    listap.add(new Peliculas(s.next(), s.nextInt(), s.next(), s.next(), s.next(), s.next(), s.next(), s.next()));
                 }
             } catch (Exception e) {
             }

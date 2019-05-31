@@ -11,8 +11,9 @@ public class Peliculas {
     private String productora;
     private String idioma;
     private String subtitulos;
+    private String doblaje;
 
-    public Peliculas(String nombre, int duracion, String categoria, String director, String productora, String idioma, String subtitulos) {
+    public Peliculas(String nombre, int duracion, String categoria, String director, String productora, String idioma, String subtitulos, String doblaje) {
         this.nombre = nombre;
         this.duracion = duracion;
         this.categoria = categoria;
@@ -20,6 +21,7 @@ public class Peliculas {
         this.productora = productora;
         this.idioma = idioma;
         this.subtitulos = subtitulos;
+        this.doblaje = doblaje;
     }
 
     public String getNombre() {
@@ -86,9 +88,18 @@ public class Peliculas {
         this.subtitulos = subtitulos;
     }
 
-    @Override
-    public String toString() {
-        return "Peliculas{" + "nombre=" + nombre + ", duracion=" + duracion + ", categoria=" + categoria + ", actores=" + actores + ", director=" + director + ", productora=" + productora + ", idioma=" + idioma + ", subtitulos=" + subtitulos + '}';
+    public String getDoblaje() {
+        return doblaje;
     }
 
+    public void setDoblaje(String doblaje) {
+        this.doblaje = doblaje;
+    }
+
+    @Override
+    public String toString() {
+        return "Peliculas{" + "nombre=" + nombre + ", duracion=" + duracion + ", categoria=" + categoria + ", actores=" + actores + ", director=" + director + ", productora=" + productora + ", idioma=" + idioma + ", subtitulos=" + subtitulos + ", doblaje=" + doblaje + '}';
+    }
+
+    
 }
