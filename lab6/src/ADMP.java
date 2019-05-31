@@ -40,7 +40,7 @@ public class ADMP {
         FileWriter fw = null;
         BufferedWriter bw = null;
         try {
-            fw = new FileWriter(archivo, false);
+            fw = new FileWriter(archivo, true);
             bw = new BufferedWriter(fw);
             for (Peliculas t : listap) {
                 bw.write(t.getCategoria() + ";");
@@ -54,6 +54,7 @@ public class ADMP {
                     bw.write(t.getActores().get(i) + ",");
                 }
                 bw.write(";");
+                bw.newLine();
             }
             bw.flush();
         } catch (Exception ex) {
