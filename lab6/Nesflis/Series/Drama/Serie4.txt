@@ -1,0 +1,9 @@
+Nombre p4
+Tiempo de duracion 120min;
+Categoria Drama
+Actores Principales Perro,loco
+Director Maje
+Productora Anime1
+Idioma Español
+Doblaje Si
+Subtitulos Si

@@ -1,0 +1,9 @@
+Nombre: p3
+Tiempo de duracion: 120min;
+Categoria: Romanticas
+Actores Principales: Perro,loco
+Director: Maje
+Productora: Anime1
+Idioma: Español
+Doblaje: Si
+Subtitulos: Si

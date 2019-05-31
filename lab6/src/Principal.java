@@ -111,6 +111,7 @@ public class Principal extends javax.swing.JFrame {
         jmi_Logout = new javax.swing.JMenuItem();
         jm_Series = new javax.swing.JMenu();
         jmi_Crear_Serie = new javax.swing.JMenuItem();
+        jmi_Eliminar_Serie = new javax.swing.JMenuItem();
         jm_Peliculas = new javax.swing.JMenu();
         jmi_Crear_Pelicula = new javax.swing.JMenuItem();
         jm_Listar = new javax.swing.JMenu();
@@ -654,6 +655,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jm_Series.add(jmi_Crear_Serie);
+
+        jmi_Eliminar_Serie.setText("Eliminar Serie");
+        jm_Series.add(jmi_Eliminar_Serie);
 
         jmb_Opciones.add(jm_Series);
 
@@ -1332,6 +1336,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_Opciones;
     private javax.swing.JMenuItem jmi_Crear_Pelicula;
     private javax.swing.JMenuItem jmi_Crear_Serie;
+    private javax.swing.JMenuItem jmi_Eliminar_Serie;
     private javax.swing.JMenuItem jmi_Listar_Arbol;
     private javax.swing.JMenuItem jmi_Login;
     private javax.swing.JMenuItem jmi_Logout;
