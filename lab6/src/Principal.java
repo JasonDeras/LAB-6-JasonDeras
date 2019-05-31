@@ -1,16 +1,10 @@
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.*;
+import java.util.*;
+import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
     }
@@ -24,7 +18,6 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem1 = new javax.swing.JMenuItem();
         jd_Login = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -32,6 +25,42 @@ public class Principal extends javax.swing.JFrame {
         pf_Clave_Usuario = new javax.swing.JPasswordField();
         tf_Usuario = new javax.swing.JTextField();
         bt_Login = new javax.swing.JButton();
+        jd_Crear_Serie = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        bt_Crear_Serie = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        tf_Nombre_Serie = new javax.swing.JTextField();
+        tf_Temporada = new javax.swing.JTextField();
+        tf_Duracion_Serie = new javax.swing.JTextField();
+        tf_Productora_Serie = new javax.swing.JTextField();
+        bt_Crear_Guardar = new javax.swing.JButton();
+        rb_Subtitulos_No = new javax.swing.JRadioButton();
+        rb_Español = new javax.swing.JRadioButton();
+        rb_Ingles = new javax.swing.JRadioButton();
+        rb_Sitcom = new javax.swing.JRadioButton();
+        rb_Drama = new javax.swing.JRadioButton();
+        rb_Novelas = new javax.swing.JRadioButton();
+        rb_Aleman = new javax.swing.JRadioButton();
+        rb_Doblaje_Si = new javax.swing.JRadioButton();
+        rb_Subtitulos_Si = new javax.swing.JRadioButton();
+        rb_Doblaje_No = new javax.swing.JRadioButton();
+        rb_Frances = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_Arctores_Series = new javax.swing.JTextArea();
+        rb_Suspenso = new javax.swing.JRadioButton();
+        rb_YYY = new javax.swing.JRadioButton();
+        bg_Idioma_Serie = new javax.swing.ButtonGroup();
+        bg_Categoria_Serie = new javax.swing.ButtonGroup();
+        bg_Subtitulo_Serie = new javax.swing.ButtonGroup();
+        bg_Doblaje_Serie = new javax.swing.ButtonGroup();
         jmb_Opciones = new javax.swing.JMenuBar();
         jm_Accerder = new javax.swing.JMenu();
         jmi_Login = new javax.swing.JMenuItem();
@@ -46,8 +75,6 @@ public class Principal extends javax.swing.JFrame {
         jmi_Modificar_Pelicula = new javax.swing.JMenuItem();
         jmi_Eliminar_Pelicula = new javax.swing.JMenuItem();
         jmi_Listar_Peliculas = new javax.swing.JMenuItem();
-
-        jMenuItem1.setText("jMenuItem1");
 
         jLabel1.setText("Usuario");
 
@@ -99,6 +126,212 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(bt_Login)
                 .addContainerGap(88, Short.MAX_VALUE))
+        );
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setText("Creacion de Series");
+
+        bt_Crear_Serie.setText("Crear");
+        bt_Crear_Serie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_SerieActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Nombre");
+
+        jLabel6.setText("Tiempo de Duracion");
+
+        jLabel7.setText("Actores Principales");
+
+        jLabel8.setText("Temporadas");
+
+        jLabel9.setText("Categoria");
+
+        jLabel10.setText("Idioma Original");
+
+        jLabel11.setText("Productora");
+
+        jLabel12.setText("Doblaje");
+
+        jLabel13.setText("Subtitulos");
+
+        bt_Crear_Guardar.setText("Guardar");
+        bt_Crear_Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_GuardarActionPerformed(evt);
+            }
+        });
+
+        bg_Subtitulo_Serie.add(rb_Subtitulos_No);
+        rb_Subtitulos_No.setText("No");
+
+        bg_Idioma_Serie.add(rb_Español);
+        rb_Español.setText("Español");
+
+        bg_Idioma_Serie.add(rb_Ingles);
+        rb_Ingles.setText("Ingles");
+
+        bg_Categoria_Serie.add(rb_Sitcom);
+        rb_Sitcom.setText("Sitcom");
+
+        bg_Categoria_Serie.add(rb_Drama);
+        rb_Drama.setText("Drama");
+
+        bg_Categoria_Serie.add(rb_Novelas);
+        rb_Novelas.setText("Novelas");
+
+        bg_Idioma_Serie.add(rb_Aleman);
+        rb_Aleman.setText("Alemán");
+
+        bg_Doblaje_Serie.add(rb_Doblaje_Si);
+        rb_Doblaje_Si.setText("Si");
+
+        bg_Subtitulo_Serie.add(rb_Subtitulos_Si);
+        rb_Subtitulos_Si.setText("Si");
+
+        bg_Doblaje_Serie.add(rb_Doblaje_No);
+        rb_Doblaje_No.setText("No");
+
+        bg_Idioma_Serie.add(rb_Frances);
+        rb_Frances.setText("Francés");
+
+        ta_Arctores_Series.setColumns(20);
+        ta_Arctores_Series.setRows(5);
+        jScrollPane1.setViewportView(ta_Arctores_Series);
+
+        bg_Categoria_Serie.add(rb_Suspenso);
+        rb_Suspenso.setText("Suspenso");
+
+        bg_Categoria_Serie.add(rb_YYY);
+        rb_YYY.setText("YYY");
+
+        javax.swing.GroupLayout jd_Crear_SerieLayout = new javax.swing.GroupLayout(jd_Crear_Serie.getContentPane());
+        jd_Crear_Serie.getContentPane().setLayout(jd_Crear_SerieLayout);
+        jd_Crear_SerieLayout.setHorizontalGroup(
+            jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel4)
+                        .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tf_Nombre_Serie))
+                        .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(tf_Duracion_Serie)))
+                    .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Sitcom)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Drama)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Novelas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_Suspenso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rb_YYY))
+                    .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_SerieLayout.createSequentialGroup()
+                            .addComponent(jLabel11)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tf_Productora_Serie))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_SerieLayout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addGap(18, 18, 18)
+                            .addComponent(tf_Temporada, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                        .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_SerieLayout.createSequentialGroup()
+                                .addComponent(bt_Crear_Guardar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt_Crear_Serie))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_SerieLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Español))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_SerieLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Doblaje_Si)
+                                .addGap(27, 27, 27)
+                                .addComponent(rb_Doblaje_No))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Crear_SerieLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rb_Subtitulos_Si)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Subtitulos_No)))
+                        .addGap(21, 21, 21)
+                        .addComponent(rb_Ingles)
+                        .addGap(18, 18, 18)
+                        .addComponent(rb_Aleman)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rb_Frances)))
+                .addContainerGap(439, Short.MAX_VALUE))
+        );
+        jd_Crear_SerieLayout.setVerticalGroup(
+            jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Crear_SerieLayout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tf_Nombre_Serie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tf_Duracion_Serie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(rb_Sitcom)
+                    .addComponent(rb_Drama)
+                    .addComponent(rb_Novelas)
+                    .addComponent(rb_Suspenso)
+                    .addComponent(rb_YYY))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tf_Temporada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tf_Productora_Serie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(rb_Ingles)
+                    .addComponent(rb_Aleman)
+                    .addComponent(rb_Frances)
+                    .addComponent(rb_Español))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(rb_Doblaje_Si)
+                    .addComponent(rb_Doblaje_No))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(rb_Subtitulos_Si)
+                    .addComponent(rb_Subtitulos_No))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Crear_SerieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Crear_Guardar)
+                    .addComponent(bt_Crear_Serie))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -160,6 +393,7 @@ public class Principal extends javax.swing.JFrame {
         jm_Peliculas.add(jmi_Eliminar_Pelicula);
 
         jmi_Listar_Peliculas.setText("Listar Peliculas");
+        jmi_Listar_Peliculas.setEnabled(false);
         jm_Peliculas.add(jmi_Listar_Peliculas);
 
         jmb_Opciones.add(jm_Peliculas);
@@ -210,6 +444,7 @@ public class Principal extends javax.swing.JFrame {
                 if (cont == 3) {
                     String[] aux = aux2.split(";");
                     if (aux[0].equals(tf_Usuario.getText()) && aux[3].equals(pf_Clave_Usuario.getText())) {
+                        bitacora += aux[0];
                         jmi_Login.setEnabled(false);
                         jm_Series.setEnabled(true);
                         jmi_Crear_Serie.setEnabled(true);
@@ -240,6 +475,189 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_Modificar_SerieActionPerformed
 
+    private void bt_Crear_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_GuardarActionPerformed
+        // TODO add your handling code here:
+        try {
+            AMDS ap = new AMDS("LAB-6-JasonDeras\\lab6\\Nesflis\\Series");
+            ap.cargarArchivo();
+            String nombre;
+            int duracion;
+            String categoria;
+            ArrayList actores = new ArrayList();
+            int temporadoas;
+            String productora;
+            String idioma;
+            String doblaje;
+            String subtitulos;
+
+            //If de los idiomas
+            if (rb_Aleman.isSelected()) {
+                idioma = "Aleman";
+            } else if (rb_Español.isSelected()) {
+                idioma = "Español";
+            } else if (rb_Ingles.isSelected()) {
+                idioma = "Ingles";
+            } else if (rb_Frances.isSelected()) {
+                idioma = "Frances";
+            } else {
+                idioma = "";
+            }//Fin del if del idioma de la serie
+
+            //If de la categoria de la serie
+            if (rb_Sitcom.isSelected()) {
+                categoria = "Sitcom";
+            } else if (rb_YYY.isSelected()) {
+                categoria = "YYY";
+            } else if (rb_Novelas.isSelected()) {
+                categoria = "Novelas";
+            } else if (rb_Drama.isSelected()) {
+                categoria = "Drama";
+            } else if (rb_Suspenso.isSelected()) {
+                categoria = "Suspenso";
+            } else {
+                categoria = "";
+            }
+
+            //If del doblaje
+            if (rb_Doblaje_No.isSelected()) {
+                doblaje = "No";
+            } else if (rb_Doblaje_Si.isSelected()) {
+                doblaje = "Si";
+            } else {
+                doblaje = "";
+            }//Fin del if del doblaje de la serie
+
+            //If de los subtitulos de la serie
+            if (rb_Subtitulos_Si.isSelected()) {
+                subtitulos = "Si";
+            } else if (rb_Subtitulos_No.isSelected()) {
+                subtitulos = "No";
+            } else {
+                subtitulos = "";
+            }//Fin del if de los subtitulos
+
+            //Llenado el resto de los datos
+            nombre = tf_Nombre_Serie.getText();
+            duracion = Integer.parseInt(tf_Duracion_Serie.getText());
+            actores.add(ta_Arctores_Series.getText());
+            temporadoas = Integer.parseInt(tf_Temporada.getText());
+            productora = tf_Productora_Serie.getText();
+            s = new Series(nombre, duracion, categoria, temporadoas, productora, idioma, doblaje, subtitulos);
+            ap.getListap().add(s);
+            ap.escribirArchivo();
+        } catch (IOException e) {
+        }
+
+        //Reseteando los valores de los textos
+        tf_Duracion_Serie.setText("");
+        tf_Nombre_Serie.setText("");
+        tf_Productora_Serie.setText("");
+        tf_Temporada.setText("");
+        ta_Arctores_Series.setText("");
+        rb_Aleman.setSelected(false);
+        rb_Doblaje_No.setSelected(false);
+        rb_Doblaje_Si.setSelected(false);
+        rb_Drama.setSelected(false);
+        rb_Español.setSelected(false);
+        rb_Frances.setSelected(false);
+        rb_Ingles.setSelected(false);
+        rb_Novelas.setSelected(false);
+        rb_Sitcom.setSelected(false);
+        rb_Subtitulos_No.setSelected(false);
+        rb_Subtitulos_Si.setSelected(false);
+        rb_Suspenso.setSelected(false);
+        rb_YYY.setSelected(false);
+    }//GEN-LAST:event_bt_Crear_GuardarActionPerformed
+
+    private void bt_Crear_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_SerieActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        String nombre;
+        int duracion;
+        String categoria;
+        ArrayList actores = new ArrayList();
+        int temporadoas;
+        String productora;
+        String idioma;
+        String doblaje;
+        String subtitulos;
+
+        //If de los idiomas
+        if (rb_Aleman.isSelected()) {
+            idioma = "Aleman";
+        } else if (rb_Español.isSelected()) {
+            idioma = "Español";
+        } else if (rb_Ingles.isSelected()) {
+            idioma = "Ingles";
+        } else if (rb_Frances.isSelected()) {
+            idioma = "Frances";
+        } else {
+            idioma = "";
+        }//Fin del if del idioma de la serie
+
+        //If de la categoria de la serie
+        if (rb_Sitcom.isSelected()) {
+            categoria = "Sitcom";
+        } else if (rb_YYY.isSelected()) {
+            categoria = "YYY";
+        } else if (rb_Novelas.isSelected()) {
+            categoria = "Novelas";
+        } else if (rb_Drama.isSelected()) {
+            categoria = "Drama";
+        } else if (rb_Suspenso.isSelected()) {
+            categoria = "Suspenso";
+        } else {
+            categoria = "";
+        }
+
+        //If del doblaje
+        if (rb_Doblaje_No.isSelected()) {
+            doblaje = "No";
+        } else if (rb_Doblaje_Si.isSelected()) {
+            doblaje = "Si";
+        } else {
+            doblaje = "";
+        }//Fin del if del doblaje de la serie
+
+        //If de los subtitulos de la serie
+        if (rb_Subtitulos_Si.isSelected()) {
+            subtitulos = "Si";
+        } else if (rb_Subtitulos_No.isSelected()) {
+            subtitulos = "No";
+        } else {
+            subtitulos = "";
+        }//Fin del if de los subtitulos
+
+        //Llenado el resto de los datos
+        nombre = tf_Nombre_Serie.getText();
+        duracion = Integer.parseInt(tf_Duracion_Serie.getText());
+        actores.add(ta_Arctores_Series.getText());
+        temporadoas = Integer.parseInt(tf_Temporada.getText());
+        productora = tf_Productora_Serie.getText();
+        s = new Series(nombre, duracion, categoria, temporadoas, productora, idioma, doblaje, subtitulos);
+        series.add(s);
+        
+        //Reseteando los valores de los textos
+        tf_Duracion_Serie.setText("");
+        tf_Nombre_Serie.setText("");
+        tf_Productora_Serie.setText("");
+        tf_Temporada.setText("");
+        ta_Arctores_Series.setText("");
+        rb_Aleman.setSelected(false);
+        rb_Doblaje_No.setSelected(false);
+        rb_Doblaje_Si.setSelected(false);
+        rb_Drama.setSelected(false);
+        rb_Español.setSelected(false);
+        rb_Frances.setSelected(false);
+        rb_Ingles.setSelected(false);
+        rb_Novelas.setSelected(false);
+        rb_Sitcom.setSelected(false);
+        rb_Subtitulos_No.setSelected(false);
+        rb_Subtitulos_Si.setSelected(false);
+        rb_Suspenso.setSelected(false);
+        rb_YYY.setSelected(false);
+    }//GEN-LAST:event_bt_Crear_SerieActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -254,16 +672,24 @@ public class Principal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -276,11 +702,28 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bg_Categoria_Serie;
+    private javax.swing.ButtonGroup bg_Doblaje_Serie;
+    private javax.swing.ButtonGroup bg_Idioma_Serie;
+    private javax.swing.ButtonGroup bg_Subtitulo_Serie;
+    private javax.swing.JButton bt_Crear_Guardar;
+    private javax.swing.JButton bt_Crear_Serie;
     private javax.swing.JButton bt_Login;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JDialog jd_Crear_Serie;
     private javax.swing.JDialog jd_Login;
     private javax.swing.JMenu jm_Accerder;
     private javax.swing.JMenu jm_Peliculas;
@@ -297,6 +740,29 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_Modificar_Pelicula;
     private javax.swing.JMenuItem jmi_Modificar_Serie;
     private javax.swing.JPasswordField pf_Clave_Usuario;
+    private javax.swing.JRadioButton rb_Aleman;
+    private javax.swing.JRadioButton rb_Doblaje_No;
+    private javax.swing.JRadioButton rb_Doblaje_Si;
+    private javax.swing.JRadioButton rb_Drama;
+    private javax.swing.JRadioButton rb_Español;
+    private javax.swing.JRadioButton rb_Frances;
+    private javax.swing.JRadioButton rb_Ingles;
+    private javax.swing.JRadioButton rb_Novelas;
+    private javax.swing.JRadioButton rb_Sitcom;
+    private javax.swing.JRadioButton rb_Subtitulos_No;
+    private javax.swing.JRadioButton rb_Subtitulos_Si;
+    private javax.swing.JRadioButton rb_Suspenso;
+    private javax.swing.JRadioButton rb_YYY;
+    private javax.swing.JTextArea ta_Arctores_Series;
+    private javax.swing.JTextField tf_Duracion_Serie;
+    private javax.swing.JTextField tf_Nombre_Serie;
+    private javax.swing.JTextField tf_Productora_Serie;
+    private javax.swing.JTextField tf_Temporada;
     private javax.swing.JTextField tf_Usuario;
     // End of variables declaration//GEN-END:variables
+    Peliculas p;
+    Series s;
+    ArrayList series = new ArrayList();
+    ArrayList Peliculas = new ArrayList();
+    String bitacora = "";
 }

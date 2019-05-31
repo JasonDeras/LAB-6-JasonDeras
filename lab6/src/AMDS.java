@@ -2,20 +2,20 @@
 import java.io.*;
 import java.util.*;
 
-public class ADMP {
+public class AMDS {
 
-    private ArrayList<Peliculas> listap = new ArrayList();
+    private ArrayList<Series> listap = new ArrayList();
     private File archivo = null;
 
-    public ADMP(String path) {
+    public AMDS(String path) {
         archivo = new File(path);
     }
 
-    public ArrayList<Peliculas> getListap() {
+    public ArrayList<Series> getListap() {
         return listap;
     }
 
-    public void setListap(ArrayList<Peliculas> listap) {
+    public void setListap(ArrayList<Series> listap) {
         this.listap = listap;
     }
 
@@ -32,7 +32,7 @@ public class ADMP {
         return "ADMP{" + "listap=" + listap + '}';
     }
 
-    public void setPersona(Peliculas p) {
+    public void setPersona(Series p) {
         this.listap.add(p);
     }
 
@@ -42,9 +42,9 @@ public class ADMP {
         try {
             fw = new FileWriter(archivo, false);
             bw = new BufferedWriter(fw);
-            for (Peliculas t : listap) {
+            for (Series t : listap) {
                 bw.write(t.getCategoria() + ";");
-                bw.write(t.getDirector() + ";");
+                bw.write(t.getProductora() + ";");
                 bw.write(t.getDuracion() + "min;");
                 bw.write(t.getIdioma() + ";");
                 bw.write(t.getNombre() + ";");
@@ -70,7 +70,8 @@ public class ADMP {
                 s = new Scanner(archivo);
                 s.useDelimiter(";");
                 while (s.hasNext()) {
-                    listap.add(new Peliculas(s.next(), s.nextInt(), s.next(), s.next(), s.next(), s.next(), s.next()));
+
+                    listap.add(new Series(s.next(), s.nextInt(), s.next(), s.nextInt(), s.next(), s.next(), s.next(), s.next()));
                 }
             } catch (Exception e) {
             }
