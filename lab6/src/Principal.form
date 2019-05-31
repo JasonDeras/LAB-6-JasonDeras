@@ -611,7 +611,7 @@
                       <Component id="bt_Crear_Guardar1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="bt_Crear_Pelicula" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="117" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -647,7 +647,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Terror">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Terror"/>
           </Properties>
@@ -675,7 +675,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Accion">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Accion"/>
           </Properties>
@@ -683,7 +683,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Romanticas">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Romanticas"/>
           </Properties>
@@ -691,7 +691,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Suspenso1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Suspenso"/>
           </Properties>
@@ -699,7 +699,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Ciencia_Ficcion">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ciencia Ficcion"/>
           </Properties>
@@ -726,7 +726,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Espa&#xf1;ol1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Idioma_Serie"/>
+              <ComponentRef name="bg_Idioma_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Espa&#xf1;ol"/>
           </Properties>
@@ -734,7 +734,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Ingles1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Idioma_Serie"/>
+              <ComponentRef name="bg_Idioma_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ingles"/>
           </Properties>
@@ -742,7 +742,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Aleman1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Idioma_Serie"/>
+              <ComponentRef name="bg_Idioma_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Alem&#xe1;n"/>
           </Properties>
@@ -750,7 +750,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Frances1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Idioma_Serie"/>
+              <ComponentRef name="bg_Idioma_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Franc&#xe9;s"/>
           </Properties>
@@ -763,7 +763,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Doblaje_Si1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Doblaje_Serie"/>
+              <ComponentRef name="bg_Doblaje_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Si"/>
           </Properties>
@@ -771,7 +771,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Doblaje_No1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Doblaje_Serie"/>
+              <ComponentRef name="bg_Doblaje_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="No"/>
           </Properties>
@@ -784,7 +784,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Subtitulos_Si1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Subtitulo_Serie"/>
+              <ComponentRef name="bg_Subtitulado_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Si"/>
           </Properties>
@@ -792,7 +792,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Subtitulos_No1">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Subtitulo_Serie"/>
+              <ComponentRef name="bg_Subtitulado_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="No"/>
           </Properties>
@@ -816,7 +816,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Animacion">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Animacion"/>
           </Properties>
@@ -824,7 +824,7 @@
         <Component class="javax.swing.JRadioButton" name="rb_Fantacsia">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="bg_Categoria_Serie"/>
+              <ComponentRef name="bg_Categoria_Pelicula"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Fantasia"/>
           </Properties>
@@ -867,7 +867,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTree" name="arbol">
+            <Component class="javax.swing.JTree" name="jt_Catalogo">
               <Properties>
                 <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
                   <TreeModel code="mi_pc&#xa;"/>
@@ -886,6 +886,14 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.ButtonGroup" name="bg_Categoria_Pelicula">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bg_Doblaje_Pelicula">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bg_Subtitulado_Pelicula">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bg_Idioma_Pelicula">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jmb_Opciones">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jm_Accerder">

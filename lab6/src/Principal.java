@@ -99,8 +99,12 @@ public class Principal extends javax.swing.JFrame {
         rb_Fantacsia = new javax.swing.JRadioButton();
         jd_Listar = new javax.swing.JDialog();
         jScrollPane3 = new javax.swing.JScrollPane();
-        arbol = new javax.swing.JTree();
+        jt_Catalogo = new javax.swing.JTree();
         bt_Cargar = new javax.swing.JButton();
+        bg_Categoria_Pelicula = new javax.swing.ButtonGroup();
+        bg_Doblaje_Pelicula = new javax.swing.ButtonGroup();
+        bg_Subtitulado_Pelicula = new javax.swing.ButtonGroup();
+        bg_Idioma_Pelicula = new javax.swing.ButtonGroup();
         jmb_Opciones = new javax.swing.JMenuBar();
         jm_Accerder = new javax.swing.JMenu();
         jmi_Login = new javax.swing.JMenuItem();
@@ -379,7 +383,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Categoria");
 
-        bg_Categoria_Serie.add(rb_Terror);
+        bg_Categoria_Pelicula.add(rb_Terror);
         rb_Terror.setText("Terror");
 
         jLabel18.setText("Actores Principales");
@@ -388,16 +392,16 @@ public class Principal extends javax.swing.JFrame {
         ta_Arctores_Peliculas.setRows(5);
         jScrollPane2.setViewportView(ta_Arctores_Peliculas);
 
-        bg_Categoria_Serie.add(rb_Accion);
+        bg_Categoria_Pelicula.add(rb_Accion);
         rb_Accion.setText("Accion");
 
-        bg_Categoria_Serie.add(rb_Romanticas);
+        bg_Categoria_Pelicula.add(rb_Romanticas);
         rb_Romanticas.setText("Romanticas");
 
-        bg_Categoria_Serie.add(rb_Suspenso1);
+        bg_Categoria_Pelicula.add(rb_Suspenso1);
         rb_Suspenso1.setText("Suspenso");
 
-        bg_Categoria_Serie.add(rb_Ciencia_Ficcion);
+        bg_Categoria_Pelicula.add(rb_Ciencia_Ficcion);
         rb_Ciencia_Ficcion.setText("Ciencia Ficcion");
 
         jLabel19.setText("Director");
@@ -406,32 +410,32 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel21.setText("Idioma Original");
 
-        bg_Idioma_Serie.add(rb_Español1);
+        bg_Idioma_Pelicula.add(rb_Español1);
         rb_Español1.setText("Español");
 
-        bg_Idioma_Serie.add(rb_Ingles1);
+        bg_Idioma_Pelicula.add(rb_Ingles1);
         rb_Ingles1.setText("Ingles");
 
-        bg_Idioma_Serie.add(rb_Aleman1);
+        bg_Idioma_Pelicula.add(rb_Aleman1);
         rb_Aleman1.setText("Alemán");
 
-        bg_Idioma_Serie.add(rb_Frances1);
+        bg_Idioma_Pelicula.add(rb_Frances1);
         rb_Frances1.setText("Francés");
 
         jLabel22.setText("Doblaje");
 
-        bg_Doblaje_Serie.add(rb_Doblaje_Si1);
+        bg_Doblaje_Pelicula.add(rb_Doblaje_Si1);
         rb_Doblaje_Si1.setText("Si");
 
-        bg_Doblaje_Serie.add(rb_Doblaje_No1);
+        bg_Doblaje_Pelicula.add(rb_Doblaje_No1);
         rb_Doblaje_No1.setText("No");
 
         jLabel23.setText("Subtitulos");
 
-        bg_Subtitulo_Serie.add(rb_Subtitulos_Si1);
+        bg_Subtitulado_Pelicula.add(rb_Subtitulos_Si1);
         rb_Subtitulos_Si1.setText("Si");
 
-        bg_Subtitulo_Serie.add(rb_Subtitulos_No1);
+        bg_Subtitulado_Pelicula.add(rb_Subtitulos_No1);
         rb_Subtitulos_No1.setText("No");
 
         bt_Crear_Guardar1.setText("Guardar");
@@ -448,10 +452,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        bg_Categoria_Serie.add(rb_Animacion);
+        bg_Categoria_Pelicula.add(rb_Animacion);
         rb_Animacion.setText("Animacion");
 
-        bg_Categoria_Serie.add(rb_Fantacsia);
+        bg_Categoria_Pelicula.add(rb_Fantacsia);
         rb_Fantacsia.setText("Fantasia");
 
         javax.swing.GroupLayout jd_Crear_PeliculaLayout = new javax.swing.GroupLayout(jd_Crear_Pelicula.getContentPane());
@@ -586,12 +590,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jd_Crear_PeliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_Crear_Guardar1)
                     .addComponent(bt_Crear_Pelicula))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("mi_pc");
-        arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane3.setViewportView(arbol);
+        jt_Catalogo.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane3.setViewportView(jt_Catalogo);
 
         bt_Cargar.setText("Cargar");
         bt_Cargar.addActionListener(new java.awt.event.ActionListener() {
@@ -1147,13 +1151,49 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_CargarActionPerformed
         // TODO add your handling code here:
-        DefaultTreeModel m = (DefaultTreeModel) arbol.getModel();
-        JFileChooser fc = new JFileChooser("\\LAB-6-JasonDeras");
-        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        int a = fc.showOpenDialog(jd_Listar);
-        File f = fc.getSelectedFile();
+        ADMP ap = new ADMP("LAB-6-JasonDeras\\lab6\\Nesflis\\Peliculas");
+        AMDS as = new AMDS("LAB-6-JasonDeras\\lab6\\Nesflis\\Series");
+        DefaultTreeModel m = (DefaultTreeModel) jt_Catalogo.getModel();
+
+        File f = new File("./Nesflis");
         m.setRoot(new DefaultMutableTreeNode(f.getName()));
         listar(f, (DefaultMutableTreeNode) m.getRoot());
+
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+        for (Peliculas p : ap.getListap()) {
+            DefaultMutableTreeNode n = new DefaultMutableTreeNode(p.getNombre());
+            if (p.getCategoria().equals("Suspenso")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (p.getCategoria().equals("Terror")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (p.getCategoria().equals("Accion")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (p.getCategoria().equals("Romanticas")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (p.getCategoria().equals("Ciencia Ficcion")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (p.getCategoria().equals("Animacion")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (p.getCategoria().equals("Fantasia")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            }//Fin del if que organiza las peliculas
+        }//Fin del for de las peliculas
+
+        for (Series s : as.getListap()) {
+            DefaultMutableTreeNode n = new DefaultMutableTreeNode(p.getNombre());
+            if (s.getCategoria().equals("Sitcom")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (s.getCategoria().equals("Drama")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (s.getCategoria().equals("Novelas")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (s.getCategoria().equals("Suspenso")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            } else if (s.getCategoria().equals("YYY")) {
+                ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(n);
+            }//Fin del if de las series
+        }//Fin del for de las series
+
     }//GEN-LAST:event_bt_CargarActionPerformed
 
     private void jmi_Listar_ArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Listar_ArbolActionPerformed
@@ -1241,10 +1281,13 @@ public class Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTree arbol;
+    private javax.swing.ButtonGroup bg_Categoria_Pelicula;
     private javax.swing.ButtonGroup bg_Categoria_Serie;
+    private javax.swing.ButtonGroup bg_Doblaje_Pelicula;
     private javax.swing.ButtonGroup bg_Doblaje_Serie;
+    private javax.swing.ButtonGroup bg_Idioma_Pelicula;
     private javax.swing.ButtonGroup bg_Idioma_Serie;
+    private javax.swing.ButtonGroup bg_Subtitulado_Pelicula;
     private javax.swing.ButtonGroup bg_Subtitulo_Serie;
     private javax.swing.JButton bt_Cargar;
     private javax.swing.JButton bt_Crear_Guardar;
@@ -1292,6 +1335,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_Listar_Arbol;
     private javax.swing.JMenuItem jmi_Login;
     private javax.swing.JMenuItem jmi_Logout;
+    private javax.swing.JTree jt_Catalogo;
     private javax.swing.JPasswordField pf_Clave_Usuario;
     private javax.swing.JRadioButton rb_Accion;
     private javax.swing.JRadioButton rb_Aleman;
