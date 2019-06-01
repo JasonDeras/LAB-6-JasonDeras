@@ -6,7 +6,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
 public class Principal extends javax.swing.JFrame {
-
+    
     public Principal() {
         initComponents();
     }
@@ -105,6 +105,16 @@ public class Principal extends javax.swing.JFrame {
         bg_Doblaje_Pelicula = new javax.swing.ButtonGroup();
         bg_Subtitulado_Pelicula = new javax.swing.ButtonGroup();
         bg_Idioma_Pelicula = new javax.swing.ButtonGroup();
+        jd_Listar_Series = new javax.swing.JDialog();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_Listar_Series = new javax.swing.JList<>();
+        bt_Eliminar_Serie = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jd_Listar_Peliculas = new javax.swing.JDialog();
+        bt_Eliminar_Pelicula = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jl_Listar_Peliculas = new javax.swing.JList<>();
+        jLabel25 = new javax.swing.JLabel();
         jmb_Opciones = new javax.swing.JMenuBar();
         jm_Accerder = new javax.swing.JMenu();
         jmi_Login = new javax.swing.JMenuItem();
@@ -114,6 +124,7 @@ public class Principal extends javax.swing.JFrame {
         jmi_Eliminar_Serie = new javax.swing.JMenuItem();
         jm_Peliculas = new javax.swing.JMenu();
         jmi_Crear_Pelicula = new javax.swing.JMenuItem();
+        jmi_Eliminar_Pelicula = new javax.swing.JMenuItem();
         jm_Listar = new javax.swing.JMenu();
         jmi_Listar_Arbol = new javax.swing.JMenuItem();
 
@@ -626,6 +637,78 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(bt_Cargar))
         );
 
+        jl_Listar_Series.setModel(new DefaultListModel());
+        jScrollPane4.setViewportView(jl_Listar_Series);
+
+        bt_Eliminar_Serie.setText("Eliminar");
+        bt_Eliminar_Serie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Eliminar_SerieActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel24.setText("Eliminar Serie");
+
+        javax.swing.GroupLayout jd_Listar_SeriesLayout = new javax.swing.GroupLayout(jd_Listar_Series.getContentPane());
+        jd_Listar_Series.getContentPane().setLayout(jd_Listar_SeriesLayout);
+        jd_Listar_SeriesLayout.setHorizontalGroup(
+            jd_Listar_SeriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Listar_SeriesLayout.createSequentialGroup()
+                .addGroup(jd_Listar_SeriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_Eliminar_Serie)
+                    .addComponent(jLabel24))
+                .addGap(0, 147, Short.MAX_VALUE))
+        );
+        jd_Listar_SeriesLayout.setVerticalGroup(
+            jd_Listar_SeriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Listar_SeriesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel24)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(bt_Eliminar_Serie)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        bt_Eliminar_Pelicula.setText("Eliminar");
+        bt_Eliminar_Pelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Eliminar_PeliculaActionPerformed(evt);
+            }
+        });
+
+        jl_Listar_Peliculas.setModel(new DefaultListModel());
+        jScrollPane5.setViewportView(jl_Listar_Peliculas);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel25.setText("Eliminar Pelicula");
+
+        javax.swing.GroupLayout jd_Listar_PeliculasLayout = new javax.swing.GroupLayout(jd_Listar_Peliculas.getContentPane());
+        jd_Listar_Peliculas.getContentPane().setLayout(jd_Listar_PeliculasLayout);
+        jd_Listar_PeliculasLayout.setHorizontalGroup(
+            jd_Listar_PeliculasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Listar_PeliculasLayout.createSequentialGroup()
+                .addGroup(jd_Listar_PeliculasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_Eliminar_Pelicula)
+                    .addComponent(jLabel25))
+                .addGap(0, 147, Short.MAX_VALUE))
+        );
+        jd_Listar_PeliculasLayout.setVerticalGroup(
+            jd_Listar_PeliculasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Listar_PeliculasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel25)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(bt_Eliminar_Pelicula)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nesflis");
 
@@ -641,6 +724,11 @@ public class Principal extends javax.swing.JFrame {
 
         jmi_Logout.setText("Login out");
         jmi_Logout.setEnabled(false);
+        jmi_Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_LogoutActionPerformed(evt);
+            }
+        });
         jm_Accerder.add(jmi_Logout);
 
         jmb_Opciones.add(jm_Accerder);
@@ -657,6 +745,11 @@ public class Principal extends javax.swing.JFrame {
         jm_Series.add(jmi_Crear_Serie);
 
         jmi_Eliminar_Serie.setText("Eliminar Serie");
+        jmi_Eliminar_Serie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_Eliminar_SerieActionPerformed(evt);
+            }
+        });
         jm_Series.add(jmi_Eliminar_Serie);
 
         jmb_Opciones.add(jm_Series);
@@ -671,6 +764,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jm_Peliculas.add(jmi_Crear_Pelicula);
+
+        jmi_Eliminar_Pelicula.setText("Eliminar Pelicula");
+        jmi_Eliminar_Pelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_Eliminar_PeliculaActionPerformed(evt);
+            }
+        });
+        jm_Peliculas.add(jmi_Eliminar_Pelicula);
 
         jmb_Opciones.add(jm_Peliculas);
 
@@ -744,7 +845,7 @@ public class Principal extends javax.swing.JFrame {
                             cont = 0;
                         }
                     }
-
+                    
                 }
             }
         } catch (Exception e) {
@@ -761,7 +862,7 @@ public class Principal extends javax.swing.JFrame {
     private void bt_Crear_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_GuardarActionPerformed
         // TODO add your handling code here:
         try {
-            AMDS ap = new AMDS("LAB-6-JasonDeras\\lab6\\Nesflis\\Series");
+            AMDS ap = new AMDS("LAB-6-JasonDeras/lab6/Nesflis/Series");
             ap.cargarArchivo();
             String nombre;
             int duracion;
@@ -855,7 +956,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Crear_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_SerieActionPerformed
         // TODO add your handling code here:
-        // TODO add your handling code here:
+        DefaultListModel modelo = (DefaultListModel) jl_Listar_Series.getModel();
         String nombre;
         int duracion;
         String categoria;
@@ -920,6 +1021,8 @@ public class Principal extends javax.swing.JFrame {
         productora = tf_Productora_Serie.getText();
         s = new Series(nombre, duracion, categoria, temporadoas, productora, idioma, doblaje, subtitulos);
         series.add(s);
+        modelo.addElement(s);
+        jl_Listar_Series.setModel(modelo);
 
         //Reseteando los valores de los textos
         tf_Duracion_Serie.setText("");
@@ -955,7 +1058,7 @@ public class Principal extends javax.swing.JFrame {
     private void bt_Crear_Guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_Guardar1ActionPerformed
         // TODO add your handling code here:
         try {
-            ADMP ap = new ADMP("LAB-6-JasonDeras\\lab6\\Nesflis\\Peliculas");
+            ADMP ap = new ADMP("LAB-6-JasonDeras/lab6/Nesflis/Peliculas");
             ap.cargarArchivo();
             String nombre;
             int duracion;
@@ -1053,6 +1156,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Crear_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_PeliculaActionPerformed
         // TODO add your handling code here:
+        DefaultListModel modelo = (DefaultListModel) jl_Listar_Peliculas.getModel();
         String nombre;
         int duracion;
         String categoria;
@@ -1120,7 +1224,10 @@ public class Principal extends javax.swing.JFrame {
         director = tf_Director.getText();
         productora = tf_Productora_Pelicula.getText();
         p = new Peliculas(nombre, duracion, categoria, director, productora, idioma, subtitulos, doblaje);
+        Peliculas.add(p);
         p.getActores().add(actores);
+        modelo.addElement(p);
+        jl_Listar_Peliculas.setModel(modelo);
 
         //Reseteando los valores de los textos
         tf_Duracion_Pelicula.setText("");
@@ -1158,11 +1265,11 @@ public class Principal extends javax.swing.JFrame {
         ADMP ap = new ADMP("LAB-6-JasonDeras\\lab6\\Nesflis\\Peliculas");
         AMDS as = new AMDS("LAB-6-JasonDeras\\lab6\\Nesflis\\Series");
         DefaultTreeModel m = (DefaultTreeModel) jt_Catalogo.getModel();
-
+        
         File f = new File("./Nesflis");
         m.setRoot(new DefaultMutableTreeNode(f.getName()));
         listar(f, (DefaultMutableTreeNode) m.getRoot());
-
+        
         DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
         for (Peliculas p : ap.getListap()) {
             DefaultMutableTreeNode n = new DefaultMutableTreeNode(p.getNombre());
@@ -1208,6 +1315,42 @@ public class Principal extends javax.swing.JFrame {
         jd_Listar.setVisible(true);
     }//GEN-LAST:event_jmi_Listar_ArbolActionPerformed
 
+    private void jmi_Eliminar_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Eliminar_SerieActionPerformed
+        // TODO add your handling code here:
+        jd_Listar_Series.setModal(true);
+        jd_Listar_Series.pack();
+        jd_Listar_Series.setLocationRelativeTo(this);
+        jd_Listar_Series.setVisible(true);
+    }//GEN-LAST:event_jmi_Eliminar_SerieActionPerformed
+
+    private void bt_Eliminar_SerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Eliminar_SerieActionPerformed
+        // TODO add your handling code here:
+        jl_Listar_Series.remove(jl_Listar_Series.getSelectedIndex());
+        series.remove(jl_Listar_Series.getSelectedIndex());
+    }//GEN-LAST:event_bt_Eliminar_SerieActionPerformed
+
+    private void bt_Eliminar_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Eliminar_PeliculaActionPerformed
+        // TODO add your handling code here:
+        jl_Listar_Peliculas.remove(jl_Listar_Peliculas.getSelectedIndex());
+        Peliculas.remove(jl_Listar_Peliculas.getSelectedIndex());
+    }//GEN-LAST:event_bt_Eliminar_PeliculaActionPerformed
+
+    private void jmi_Eliminar_PeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_Eliminar_PeliculaActionPerformed
+        // TODO add your handling code here:
+        jd_Listar_Peliculas.setModal(true);
+        jd_Listar_Peliculas.pack();
+        jd_Listar_Peliculas.setLocationRelativeTo(this);
+        jd_Listar_Peliculas.setVisible(true);
+    }//GEN-LAST:event_jmi_Eliminar_PeliculaActionPerformed
+
+    private void jmi_LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_LogoutActionPerformed
+        // TODO add your handling code here:
+        jm_Accerder.setEnabled(false);
+        jm_Listar.setEnabled(false);
+        jm_Peliculas.setEnabled(true);
+        jm_Series.setEnabled(false);
+    }//GEN-LAST:event_jmi_LogoutActionPerformed
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1219,21 +1362,21 @@ public class Principal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -1246,9 +1389,9 @@ public class Principal extends javax.swing.JFrame {
                 new Principal().setVisible(true);
             }
         });
-
+        
     }
-
+    
     public void listar(File p_raiz, DefaultMutableTreeNode nodo) {
         try {
             for (File temp : p_raiz.listFiles()) {
@@ -1260,12 +1403,12 @@ public class Principal extends javax.swing.JFrame {
                     nodo.add(n);
                     listar(temp, n);
                 }
-
+                
             }
         } catch (Exception e) {
         }
     }
-
+    
     public void bitacora(String bitacora) throws IOException {
         File archivo = null;
         FileWriter fw = null;
@@ -1298,6 +1441,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Crear_Guardar1;
     private javax.swing.JButton bt_Crear_Pelicula;
     private javax.swing.JButton bt_Crear_Serie;
+    private javax.swing.JButton bt_Eliminar_Pelicula;
+    private javax.swing.JButton bt_Eliminar_Serie;
     private javax.swing.JButton bt_Login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1315,6 +1460,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1325,10 +1472,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JDialog jd_Crear_Pelicula;
     private javax.swing.JDialog jd_Crear_Serie;
     private javax.swing.JDialog jd_Listar;
+    private javax.swing.JDialog jd_Listar_Peliculas;
+    private javax.swing.JDialog jd_Listar_Series;
     private javax.swing.JDialog jd_Login;
+    private javax.swing.JList<String> jl_Listar_Peliculas;
+    private javax.swing.JList<String> jl_Listar_Series;
     private javax.swing.JMenu jm_Accerder;
     private javax.swing.JMenu jm_Listar;
     private javax.swing.JMenu jm_Peliculas;
@@ -1336,6 +1489,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_Opciones;
     private javax.swing.JMenuItem jmi_Crear_Pelicula;
     private javax.swing.JMenuItem jmi_Crear_Serie;
+    private javax.swing.JMenuItem jmi_Eliminar_Pelicula;
     private javax.swing.JMenuItem jmi_Eliminar_Serie;
     private javax.swing.JMenuItem jmi_Listar_Arbol;
     private javax.swing.JMenuItem jmi_Login;
